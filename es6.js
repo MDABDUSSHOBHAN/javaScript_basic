@@ -246,12 +246,80 @@ console.log(sakib);
 
 
 
+//debounce 
+// Debounce function
+function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+
+// Function to be debounced
+function search(query) {
+    console.log('Searching for:', query);
+}
+
+// Create a debounced version of the search function
+const dSearch = debounce(search, 100);
+
+// Simulate typing with multiple calls to the debounced function
+dSearch('Hello');
+dSearch('Hello, ');
+dSearch('Hello, World!');  // Only this call will trigger after 100ms
 
 
+// count the value of once or more 
+
+const fruits = ["shobhan","sakib","shobhan"];
+
+function countDuplicates(data){
+    const output={};
+
+    data.map((d) => {
+        output[d] = (output[d] || 0) +1;
+
+    });
+    return output;
+}
+console.log(countDuplicates(fruits));
+
+//reverse words in a string
+const str="I Love Bangladesh";
 
 
+//Memooization in javascript
 
+function add(x){
 
+    return x+10;
+}
+
+// HOC
+const memo = (func) => {
+    let cache = {};
+    return function(x){
+if(cache[x]){
+    console.log('result from cashe');
+    return cache[x];
+} else{
+    console.log('calculating result');
+    const result = func(x);
+    cache[x]= result;
+    return result;
+}
+    }
+}
+// End of HOC
+// console.log('Memoization',memo(add(10)));
+
+const calculate = memo(add);
+
+console.log(calculate(10));
+console.log(calculate(10));
 
 
 
