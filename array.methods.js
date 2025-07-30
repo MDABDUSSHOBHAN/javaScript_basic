@@ -37,6 +37,8 @@ console.log(z);
 
 const [m1,m2] = product.name;
 console.log(m1,m2);
+//now object distructring
+
 
 
 
