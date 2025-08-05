@@ -105,3 +105,43 @@ log(ws);
  console.log(a1.length)
  a1.copyWithin(3,2);//never change array length
  log(a1);
+
+//  match ECMA 11
+
+const regex = /\b(iPhone)+\b/g;
+const smartphones = "S series, iPhone, note series, iPhone, A series, iPhone, moto phones";
+
+for (const match of smartphones.match(regex)) {
+  console.log(match); 
+}
+
+// const result1 = value ?? defaultValue
+
+
+let username;
+let displayName = username ?? "Guest";
+console.log(displayName); // "Guest"
+let age = 0
+let validAge = age ?? 18;
+console.log(validAge); // 0 (কারণ 0 null বা undefined না)
+
+//keyword for conditional execution ____________________>>
+let languate=undefined;
+console.log(languate??"javascript");
+
+
+//Promise all setttled() function 
+
+const promise1 = new Promise(resolve => resolve('burger'));
+const promise2 = new Promise((resolve,reject) => reject('apple'));
+const promise3 = new Promise(resolve => resolve('pizza'));
+Promise.allSettled([promise1,promise2,promise3])
+      .then(response => log(response));
+
+
+
+
+// new Promise((resolve,resolve)=>{
+//     resolve();
+//     reject();
+// })
