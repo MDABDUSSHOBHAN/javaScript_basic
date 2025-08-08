@@ -34,8 +34,21 @@ function getCertificate(){
     console.log('Congratulations! you got certificate.')
 }
 
-enroll(function(){
-    progress(getCertificate)
-})
+// enroll(function(){
+//     progress(getCertificate)
+// })
+
+
+async function course() {
+    
+    try{
+        await enroll();
+        await progress();
+        const message = await getCertificate();
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 
 

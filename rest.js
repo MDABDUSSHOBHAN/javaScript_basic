@@ -3,16 +3,16 @@
 import myName from './import.js'
 
 console.log('fromRest',myName);
-function add(a,b,c,...num){
-    //console.log('value of abc',a,b,c);
-    console.log('number is:',num);
-    let sum=0;
-    for(let i=0;i< arguments.length;i++){
-        sum=sum+num[i];
-    }
-    return sum;
-}
-console.log(add(1,2,3,4,5));
+// function add(a,b,c,...num){
+//     //console.log('value of abc',a,b,c);
+//     console.log('number is:',num);
+//     let sum=0;
+//     for(let i=0;i< arguments.length;i++){
+//         sum=sum+num[i];
+//     }
+//     return sum;
+// }
+// console.log(add(1,2,3,4,5));
 
 let a=5;
 let b=[4,5,6];
@@ -54,3 +54,9 @@ console.log(city);
 // optional chining in JavaScript
 console.log(user.addressd?.city)
 
+function hello(){
+
+    return "Hello";
+}
+
+console.log(hello);
